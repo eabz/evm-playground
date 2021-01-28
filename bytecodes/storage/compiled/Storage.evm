@@ -1,0 +1,259 @@
+    /* "./storage/base/Storage.sol":65:407  contract Storage {... */
+  mstore(0x40, 0x80)
+  callvalue
+  dup1
+  iszero
+  tag_1
+  jumpi
+  0x00
+  dup1
+  revert
+tag_1:
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "./storage/base/Storage.sol":65:407  contract Storage {... */
+      mstore(0x40, 0x80)
+      callvalue
+      dup1
+      iszero
+      tag_1
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_1:
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      shr(0xe0, calldataload(0x00))
+      dup1
+      0xc2bc2efc
+      eq
+      tag_3
+      jumpi
+      dup1
+      0xf5d82b6b
+      eq
+      tag_4
+      jumpi
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "./storage/base/Storage.sol":276:404  function get(address _addr) public view returns(uint256) {... */
+    tag_3:
+      tag_5
+      0x04
+      dup1
+      calldatasize
+      sub
+      0x20
+      dup2
+      lt
+      iszero
+      tag_6
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_6:
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_7
+      jump	// in
+    tag_5:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "./storage/base/Storage.sol":142:270  function add(address _addr, uint256 _value) public returns(bool) {... */
+    tag_4:
+      tag_8
+      0x04
+      dup1
+      calldatasize
+      sub
+      0x40
+      dup2
+      lt
+      iszero
+      tag_9
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_9:
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_10
+      jump	// in
+    tag_8:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "./storage/base/Storage.sol":276:404  function get(address _addr) public view returns(uint256) {... */
+    tag_7:
+        /* "./storage/base/Storage.sol":324:331  uint256 */
+      0x00
+        /* "./storage/base/Storage.sol":343:356  uint256 value */
+      dup1
+        /* "./storage/base/Storage.sol":359:368  addresses */
+      0x00
+        /* "./storage/base/Storage.sol":359:375  addresses[_addr] */
+      dup1
+        /* "./storage/base/Storage.sol":369:374  _addr */
+      dup5
+        /* "./storage/base/Storage.sol":359:375  addresses[_addr] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      sload
+        /* "./storage/base/Storage.sol":343:375  uint256 value = addresses[_addr] */
+      swap1
+      pop
+        /* "./storage/base/Storage.sol":392:397  value */
+      dup1
+        /* "./storage/base/Storage.sol":385:397  return value */
+      swap2
+      pop
+      pop
+        /* "./storage/base/Storage.sol":276:404  function get(address _addr) public view returns(uint256) {... */
+      swap2
+      swap1
+      pop
+      jump	// out
+        /* "./storage/base/Storage.sol":142:270  function add(address _addr, uint256 _value) public returns(bool) {... */
+    tag_10:
+        /* "./storage/base/Storage.sol":201:205  bool */
+      0x00
+        /* "./storage/base/Storage.sol":236:242  _value */
+      dup2
+        /* "./storage/base/Storage.sol":217:226  addresses */
+      0x00
+        /* "./storage/base/Storage.sol":217:233  addresses[_addr] */
+      dup1
+        /* "./storage/base/Storage.sol":227:232  _addr */
+      dup6
+        /* "./storage/base/Storage.sol":217:233  addresses[_addr] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+        /* "./storage/base/Storage.sol":217:242  addresses[_addr] = _value */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "./storage/base/Storage.sol":259:263  true */
+      0x01
+        /* "./storage/base/Storage.sol":252:263  return true */
+      swap1
+      pop
+        /* "./storage/base/Storage.sol":142:270  function add(address _addr, uint256 _value) public returns(bool) {... */
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+
+    auxdata: 0xa26469706673582212203445b63a83da3262dfe63ff28fab993f6b0e4de69713359104ded138d267848164736f6c63430007060033
+}
